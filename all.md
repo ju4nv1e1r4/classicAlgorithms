@@ -68,3 +68,41 @@ Diferente das árvores binárias, aqui cada nó pode ter múltiplos filhos (gera
 * **BFS (Breadth-First Search):** Explora todos os vizinhos de um nó antes de passar para os vizinhos do próximo nível. Usa uma **Fila**.
 * **Linguagem sugerida:** **Rust** (para DFS recursivo) e **Go** (para BFS com concorrência).
 * **Dificuldade:** Média.
+
+---
+
+## Trilha de Algoritmos e Estruturas de Dados para IA e Machine Learning
+
+Este roteiro foca na transição de algoritmos clássicos para aplicações práticas em Inteligência Artificial e Ciência de Dados.
+
+### 1. Fundamentos de Acesso e Organização
+
+* **Tabelas Hash (Dicionários):** Nosso próximo passo. Essencial para entender como o Python gerencia nomes de variáveis e como sistemas de "Feature Stores" buscam dados de usuários em tempo real.
+* **Heaps / Filas de Prioridade:** Fundamentais para algoritmos de busca como o A* (usado em robótica e pathfinding) e para encontrar os "Top K" elementos em grandes conjuntos de dados (como os resultados de uma busca no Google).
+
+### 2. Estruturas para Dados em Alta Dimensão
+
+* **Tries (Árvores de Prefixos):** Como o corretor ortográfico ou o "Autocomplete" de uma IA funciona tão rápido.
+* **KD-Trees & Ball Trees:** Versões avançadas da sua Árvore Binária usadas para encontrar os vizinhos mais próximos (K-Nearest Neighbors) em espaços multidimensionais. Sem isso, sistemas de recomendação seriam impossíveis.
+
+### 3. Algoritmos de Grafos (O Coração das Redes Neurais)
+
+* **DAGs (Grafos Acíclicos Dirigidos):** Representação de como o fluxo de cálculo passa por uma rede neural (Backpropagation).
+* **Algoritmos de Menor Caminho (Dijkstra/A*):** Essenciais para IA em jogos e logística.
+* **Grafos de Conhecimento (Knowledge Graphs):** Como as IAs modernas conectam fatos (ex: "Paris" -> "Capital" -> "França").
+
+### 4. Otimização e Programação Dinâmica
+
+* **Programação Dinâmica (DP):** Usada em algoritmos de processamento de linguagem natural (NLP) antigos e em Aprendizado por Reforço (Reinforcement Learning).
+* **Gradiente Descendente (Versão Algorítmica):** Entender a matemática por trás de como um modelo "aprende" ajustando pesos.
+
+### 5. Algoritmos de Amostragem e Probabilidade
+
+* **Reservoir Sampling:** Como escolher uma amostra aleatória de uma base de dados tão grande que não cabe na memória (Big Data).
+* **Filtros de Bloom:** Como saber se um dado NÃO existe em um banco de dados gigante sem precisar consultar o disco (economiza bilhões de dólares em infraestrutura).
+
+### Por que isso importa para um AI Scientist?
+
+* **Eficiência de Memória:** Treinar modelos grandes exige saber exatamente como os dados são alocados.
+* **Performance de Inferência:** Colocar um modelo em produção exige que ele responda rápido. Um algoritmo $O(n^2)$ pode matar o seu produto, enquanto um $O(n \log n)$ o salva.
+* **Customização:** Muitas vezes, as bibliotecas prontas (PyTorch, TensorFlow) não resolvem um problema específico, e você precisará codar a lógica de otimização na mão.
