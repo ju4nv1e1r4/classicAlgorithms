@@ -13,44 +13,48 @@ func (n *Node) Inserir(valor int) *Node {
 		return &Node{valor: valor}
 	}
 
-	if n.valor < valor {
-		n.direita = n.direita.Inserir(valor)
-	} else {
+	if valor < n.valor {
 		n.esquerda = n.esquerda.Inserir(valor)
+	} else if valor > n.valor {
+		n.direita = n.direita.Inserir(valor)
 	}
 
 	return n
 }
 
 func (n *Node) ExibirEmOrdem() {
-	if n != nil {
-		n.esquerda.ExibirEmOrdem()
-		fmt.Println(n.valor)
-		n.direita.ExibirEmOrdem()
+	if n == nil {
+		return
 	}
+
+	n.esquerda.ExibirEmOrdem()
+	fmt.Printf("%d ", n.valor)
+	n.direita.ExibirEmOrdem()
 }
 
 func (n *Node) Buscar(valor int) bool {
-	if n == nil || n.valor == valor {
-		return n != nil
+	if n == nil {
+		return false
+	}
+	if n.valor == valor {
+		return true
 	}
 
 	if valor < n.valor {
 		return n.esquerda.Buscar(valor)
-	} else {
-		return n.direita.Buscar(valor)
 	}
+	return n.direita.Buscar(valor)
 }
 
 func (n *Node) Remover(valor int) *Node {
 	if n == nil {
-		return n
+		return nil
 	}
 
 	if valor < n.valor {
-		return n.esquerda.Remover(valor)
+		n.esquerda = n.esquerda.Remover(valor)
 	} else if valor > n.valor {
-		return n.direita.Remover(valor)
+		n.direita = n.direita.Remover(valor)
 	} else {
 		if n.esquerda == nil {
 			return n.direita
@@ -58,18 +62,19 @@ func (n *Node) Remover(valor int) *Node {
 			return n.esquerda
 		}
 
-		n.encontrarMinimo()
-		n.direita.Remover(valor)
+		substituto := n.direita.encontrarMinimo()
+		n.valor = substituto.valor
+		n.direita = n.direita.Remover(substituto.valor)
 	}
 
 	return n
 }
 
 func (n *Node) encontrarMinimo() *Node {
-	for n.esquerda != nil {
-		n = n.esquerda
+	atual := n
+	for atual.esquerda != nil {
+		atual = atual.esquerda
 	}
 
-	return n
-
+	return atual
 }

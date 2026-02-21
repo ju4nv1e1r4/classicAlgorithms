@@ -12,10 +12,10 @@ func main() {
 	// Vamos criar uma árvore com a raiz 50
 	valoresParaInserir := [...]int{50, 30, 70, 20, 40, 60, 80, 35}
 
-	n := bst.Node{}
+	var n *bst.Node
 
 	for _, valor := range valoresParaInserir {
-		n.Inserir(valor)
+		n = n.Inserir(valor)
 		fmt.Println("Inserido: ", valor)
 	}
 
@@ -43,15 +43,15 @@ func main() {
 
 	fmt.Println("\n--- Testando a Remoção ---")
 	fmt.Println("Removendo 20 (Nó folha)...")
-	n.Remover(20)
+	n = n.Remover(20)
 
 	fmt.Println("\n--- Removendo 40 (Nó com 1 filho) ---")
 	fmt.Println("Removendo 40 (Nó folha)...")
-	n.Remover(40)
+	n = n.Remover(40)
 
 	fmt.Println("\n--- Removendo 50 (Nó com 2 filhos - A Raiz!) ---")
 	fmt.Println("Removendo 50 (Nó folha)...")
-	n.Remover(50)
+	n = n.Remover(50)
 
 	fmt.Println("\n--- Árvore Final em Ordem Crescente ---")
 	n.ExibirEmOrdem()
