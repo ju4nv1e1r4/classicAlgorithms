@@ -22,8 +22,8 @@
 import numpy as np
 
 class HashingTrick:
-    def __init__(self):
-        self.MEM_LIMIT = 100000
+    def __init__(self, limite_memoria:int):
+        self.MEM_LIMIT = limite_memoria
         self.counter = np.zeros(
             self.MEM_LIMIT,
             dtype=int,
