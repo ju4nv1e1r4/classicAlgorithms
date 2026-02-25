@@ -1,0 +1,1 @@
+/home/juanvieira/personal/studies/rust/binary_search_tree/target/debug/binary_search_tree: /home/juanvieira/personal/studies/rust/binary_search_tree/src/bst.rs /home/juanvieira/personal/studies/rust/binary_search_tree/src/main.rs
